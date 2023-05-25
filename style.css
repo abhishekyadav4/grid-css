@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Roboto', sans-serif; 
+
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background:linear-gradient(red, black);
+     color: white;
+}
+
+.left-side{
+        flex-basis: 30%;
+        align-items: center;
+        text-align: center;
+       
+}
+.right-side{
+    flex-basis: 50%;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 120px;
+   
+}
+
+.galary{
+    background-size: cover;
+    background-position: top;
+    /* for making text centre we first make these galary div tag flex   */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    background-blend-mode: hard-light;  
+    /* background-blend-mode is basically the combination of background-color and background-image */
+    transition: all 1s ease-in-out;
+}
+
+.galary:hover{
+    background-color: #999;
+    background-position: center;
+    box-shadow: 0 0 4px #fff;
+               /* horizontal vertical blur color  */
+    cursor: pointer;
+}
+/* utility class for shortcut */
+
+.row-2{
+    grid-row: span 2;
+}
+.colm-2{
+    grid-column: span 2;
+}
+
+@media  screen and (max-width:1024px) {
+    
+    .container {
+        flex-direction: column;
+        padding-block: 20px;
+    }
+    .right-side{
+        width: 100%;
+        padding-inline: 12px;
+        grid-auto-rows: 220px;
+    }
+    .galary{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+
+}
